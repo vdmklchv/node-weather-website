@@ -15,6 +15,7 @@ weatherForm.addEventListener('submit', (e) => {
     } else {
       messageOne.textContent = data.address.toUpperCase();
       messageTwo.textContent = `The temperature is ${data.temp}. It is ${data.desc.toLowerCase()} now.`
+      messageTwo.insertAdjacentHTML('beforebegin', `<img src=${data.icon} alt="weather icon">`);
     }
   })
 })

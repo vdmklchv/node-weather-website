@@ -45,6 +45,7 @@ app.get('/weather', (req, res) => {
       return res.send({ error });
     } 
     forecast(latitude, longitude, (error, forecastData) => {
+      console.log(forecastData);
       if (error) {
         return console.log(error);
       }
@@ -53,6 +54,7 @@ app.get('/weather', (req, res) => {
         temp: forecastData.current.temperature,
         desc: forecastData.current.weather_descriptions[0],
         rainChance: forecastData.current.precip,
+        icon: forecastData.current.weather_icons[0],
   })
   
   });
